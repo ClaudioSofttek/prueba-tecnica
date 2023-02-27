@@ -1,0 +1,28 @@
+
+<div class="row">
+    <div class="col-12" style="text-align: center">
+      <h1 class="fst-normal" >Manejo de pipes</h1>
+      <br>
+    </div>
+    <div class="col-5" style="margin-left: 10px;">
+      <h3>Arreglo sin pasar por Pipe</h3>
+      <ul>
+        <li>{{arreglo[0] }}</li>
+        <li>{{arreglo[1]}}</li>
+        <li>{{arreglo[2]}}</li>
+        <li>{{arreglo[3]}}</li>
+      </ul>
+    </div>
+    <div class="col-5" style="margin-left: 10px;">
+      <h3>Arreglo pasado por el pipe de uppercase personalizado</h3>
+      <ul>
+        <li>{{arreglo[0] | uppercase}}</li>
+        <li>{{arreglo[1] | uppercase}}</li>
+        <li>{{arreglo[2] | uppercase}}</li>
+        <li>{{arreglo[3] | uppercase}}</li>
+  
+      </ul>
+    </div>
+  </div>
+<h4>Fecha sin pasar por el pipe: {{fecha}}</h4>
+  <h5>Fecha al pasar por pipe: {{fecha | formatoFecha}}</h5>
