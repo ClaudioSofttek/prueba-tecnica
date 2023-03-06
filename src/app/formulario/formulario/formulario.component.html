@@ -3,23 +3,27 @@
     <div class="flex-container">
 
 
-      <div><label class="form-label">Email</label>
+      <div><label >Email</label>
         <input type="text" id="email" formControlName="email">
         <div class="alert aler.danger mt-2" [hidden]="formulario.get('email')?.valid || formulario.get('email')?.pristine ">
           Ingresa un correo valido
 
         </div>
       </div>
-      <div><label class="form-label">Password</label>
+      <div><label >Password</label>
         <input type="password" id="password" formControlName="password">
         <div class="alert aler-danger mt-2" [hidden]="formulario.get('password')?.valid || formulario.get('password')?.pristine ">el password es obligatorio
+        </div>
+        <label >nombre</label>
+        <input type="nombre" id="nombre" formControlName="nombre">
+        <div class="alert aler-danger mt-2" [hidden]="formulario.get('nombre')?.invalid || formulario.get('nombre')?.pristine ">el valor debe estar entre 8 y 12 caracteres
         </div>
       </div>
 
 
-
+      <div> <button type="submit" class="btn btn-primary">Consultar</button></div>
     </div>
-    <div> <button type="submit" class="btn btn-primary">Consultar</button></div>
+
 
   </form>
 
