@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../interfaces/usuarios.interface';
-
+import { UsuarioService } from '../services/usuario.service';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-
+  styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
 

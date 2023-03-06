@@ -1,51 +1,33 @@
-<h1 class="shadow-sm p-3 mb-5 bg-body rounded"> Lista de usuarios</h1>
-
-<div class="row">
-    <div class="col-6"><button type="button" class="btn btn-outline-success" (click)="buscar()">Consulta todos los usuarios</button></div>
-    <div class="col-6">
-        <div class="row">
-        <div class="col-3">
-            <form (ngSubmit)="buscar()" autocomplete="off">
-                <input type="text" name="termino" class="form-control" [(ngModel)]="termino"
-                    placeholder="El filtro quedo en desarrollo">
-
-
-            </form>
-        </div>
-    </div></div>
+<div class="flex-container-row">
+<div> <h1 > Lista de usuarios</h1></div>
+<div>   <button type="button" class="btn btn-outline-success" (click)="buscar()">Consulta todos los usuarios</button>
 </div>
+   
+ </div>
 
-<br>
-<br>
-<div class="row; container-fluid">
-
+<div class="flex-container">
 
     
-    <div class="row">
-        <div class="col-6">
-            <table class="table table-hover; table table-bordered" >
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>E-mail</th>
-                        <th>City</th>
-                        <th>Phone</th>
-                    </tr>
+    <div><table class="table table-hover; table table-bordered" >
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>City</th>
+                <th>Phone</th>
+            </tr>
 
-                </thead>
-                <tbody>
-                    <tr *ngFor="let usuario of usuarios; let i= index">
-                        <td>{{i+1}}</td>
-                        <td>{{usuario.name}}</td>
-                        <td>{{usuario.email}}</td>
-                        <td>{{usuario.address.city}}</td>
-                        <td>{{usuario.phone}}</td>
-                    </tr>
-                </tbody>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios; let i= index">
+                <td>{{i+1}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.address.city}}</td>
+                <td>{{usuario.phone}}</td>
+            </tr>
+        </tbody>
 
-            </table>
-        </div>
-    </div>
-
+    </table></div>
 </div>

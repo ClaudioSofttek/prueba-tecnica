@@ -1,0 +1,29 @@
+<div>
+  <form [formGroup]="formulario" (ngSubmit)="mostrar()">
+    <div class="flex-container">
+
+
+      <div><label class="form-label">Email</label>
+        <input type="text" id="email" formControlName="email">
+        <div class="alert aler.danger mt-2" [hidden]="formulario.get('email')?.valid || formulario.get('email')?.pristine ">
+          Ingresa un correo valido
+
+        </div>
+      </div>
+      <div><label class="form-label">Password</label>
+        <input type="password" id="password" formControlName="password">
+        <div class="alert aler-danger mt-2" [hidden]="formulario.get('password')?.valid || formulario.get('password')?.pristine ">el password es obligatorio
+        </div>
+      </div>
+
+
+
+    </div>
+    <div> <button type="submit" class="btn btn-primary">Consultar</button></div>
+
+  </form>
+
+
+  <h3>aqui {{formulario.value | json}}</h3>
+
+</div>

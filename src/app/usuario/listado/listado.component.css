@@ -1,0 +1,22 @@
+.flex-container {
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+    flex-wrap: wrap;
+    margin: 120px;
+    margin-top: 20px;
+
+
+
+}
+.flex-container-row {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px;
+    margin-top: 20px;
+
+
+
+}

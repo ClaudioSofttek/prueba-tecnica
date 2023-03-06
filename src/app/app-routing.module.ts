@@ -25,12 +25,11 @@ const routes: Routes = [
 
   },
 
-
   {
-    path: '**',
-    // component: ErrorPageComponent
-    redirectTo: 'usuarios'
-  }
+    path: 'formulario',
+
+    loadChildren: () => import('./formulario/formulario.module').then(m => m.FormularioModule)
+  },
 ]
 
 @NgModule({

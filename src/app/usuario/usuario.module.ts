@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
     ListadoComponent
@@ -17,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     UsuarioRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [UsuarioService],
 
