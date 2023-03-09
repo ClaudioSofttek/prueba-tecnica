@@ -5,19 +5,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MenuModule } from './menu/menu.module';
 import { MenuComponent } from './menu/menu.component';
-
+import { ValidacionGuardGuard } from './auth/guard/validacion-guard.guard';
 
 
 const routes: Routes = [
   {
     path: 'usuarios',
 
-    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
+    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule),
+
+  
+    
   },
   {
     path: 'home',
 
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+
   },
   {
     path: 'menu',
@@ -29,6 +33,10 @@ const routes: Routes = [
     path: 'formulario',
 
     loadChildren: () => import('./formulario/formulario.module').then(m => m.FormularioModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth-module.module').then( m => m.AuthModuleModule ),
   },
 ]
 

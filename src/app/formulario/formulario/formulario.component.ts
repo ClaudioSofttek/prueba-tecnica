@@ -10,7 +10,7 @@ import { ValidatorPersonalizadoService } from '../service/validator-personalizad
 })
 
 export class FormularioComponent implements OnInit {
-  mostrar() { };
+  mostrar() { console.log(this.formulario.value)};
   ngOnInit(): void { }
 
 
@@ -26,6 +26,7 @@ export class FormularioComponent implements OnInit {
       'nombre': new FormControl('', [Validators.required, this.validatorPersonalizadoService.validar]),
       
     });
+    
   }
 
 

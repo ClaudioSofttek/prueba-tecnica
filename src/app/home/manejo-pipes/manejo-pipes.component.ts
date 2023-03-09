@@ -9,6 +9,7 @@ export class ManejoPipesComponent implements OnInit {
 
   arreglo: string[]=['auto','casa','arbol','mascota']
   fecha: number = Date.now();
+  perro: string[] =['fedrico','juan'];
   constructor() { }
 
   ngOnInit(): void {
