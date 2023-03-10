@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavComponent } from '../shared/nav/nav.component';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',

@@ -8,11 +8,12 @@ import { MenuModule } from './menu/menu.module';
 import { NavComponent } from './shared/nav/nav.component';
 
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
     
   ],
   imports: [
@@ -20,8 +21,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MenuModule,
     FormularioModule,
-    FormsModule
-    
+    FormsModule,
+    HttpClientModule
     
   ],
   providers: [],

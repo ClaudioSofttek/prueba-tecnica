@@ -11,7 +11,7 @@ validar(control:FormControl){
 
   const valor: string=control.value;
 if(valor.length>8 && valor.length<12 )
-{ return{validar: true}}
+{ return{validar: false}}
   else{return null;}
 }
 

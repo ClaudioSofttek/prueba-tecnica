@@ -3,46 +3,48 @@ import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStat
 import { Observable } from 'rxjs';
 import { AuthServiceService } from '../service/auth-service.service';
 import { tap } from 'rxjs/operators';
+import { Usuario, Address } from '../interface/Usuario.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ValidacionGuardGuard implements CanActivate, CanLoad {
-constructor(
-  private authServiceService: AuthServiceService,
-               private router: Router
-){}
+
+
+export class ValidacionGuardGuard implements CanLoad, CanActivate {
+
+  constructor( private authServiceService: AuthServiceService,
+               private router: Router ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-   
-      return this.authServiceService.verificaAutenticacion()
-      .pipe(
-        tap( estaAutenticado => {
-          if( estaAutenticado ) {
-            console.log('autenticado')
-            this.router.navigate(['./usuarios/listado']);
-          }
-        })
-      )
 
-      
-  }
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]): Observable<boolean> | boolean {
-   
       return this.authServiceService.verificaAutenticacion()
       .pipe(
         tap( estaAutenticado => {
           if( !estaAutenticado ) {
-            console.log('no autenticado')
-            this.router.navigate(['./home']);
+            this.router.navigate(['./auth/login']);
+          }
+        })
+      )
+  
+  }
+
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]): Observable<boolean> | boolean {
+
+      
+
+      return this.authServiceService.verificaAutenticacion()
+      .pipe(
+        tap( estaAutenticado => {
+          if( !estaAutenticado ) {
+            this.router.navigate(['./auth/login']);
           }
         })
       );
-
+       
   }
 }

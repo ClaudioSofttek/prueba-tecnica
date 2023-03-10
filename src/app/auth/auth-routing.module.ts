@@ -28,6 +28,6 @@ const routes: Routes = [
     RouterModule.forChild( routes )
 
   ],
-  exports:[RouterModule]
+    exports:[RouterModule],
 })
 export class AuthRoutingModule { }

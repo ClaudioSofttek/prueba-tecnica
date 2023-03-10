@@ -22,8 +22,8 @@ export class FormularioComponent implements OnInit {
 
     this.formulario = this.fb.group({
       'email': new FormControl('', [Validators.required, Validators.email]),
-      'password': new FormControl('', [Validators.required, this.validatorPersonalizadoService.validar]),
-      'nombre': new FormControl('', [Validators.required, this.validatorPersonalizadoService.validar]),
+      'password': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(12)]),
+      'nombre': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(12)]),
       
     });
     

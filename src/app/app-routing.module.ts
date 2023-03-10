@@ -14,29 +14,36 @@ const routes: Routes = [
 
     loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule),
 
-  
-    
+     canLoad: [ ValidacionGuardGuard ],
+    canActivate: [ ValidacionGuardGuard ]
+
   },
   {
     path: 'home',
 
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-
+    canLoad: [ ValidacionGuardGuard ],
+    canActivate: [ ValidacionGuardGuard ]
   },
   {
     path: 'menu',
-    component: MenuComponent
-
+    component: MenuComponent,
+    canLoad: [ ValidacionGuardGuard ],
+    canActivate: [ ValidacionGuardGuard ]
   },
 
   {
     path: 'formulario',
 
     loadChildren: () => import('./formulario/formulario.module').then(m => m.FormularioModule)
+    ,
+    canLoad: [ ValidacionGuardGuard ],
+    canActivate: [ ValidacionGuardGuard ]
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth-module.module').then( m => m.AuthModuleModule ),
+    
   },
 ]
 
