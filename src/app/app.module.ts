@@ -9,11 +9,13 @@ import { NavComponent } from './shared/nav/nav.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DirectivasPersonalizadasDirective } from './directivas/directivas-personalizadas.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    DirectivasPersonalizadasDirective,
     
   ],
   imports: [

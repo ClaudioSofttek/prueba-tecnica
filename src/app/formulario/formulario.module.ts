@@ -4,20 +4,22 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { FormularioRoutingModule } from './formulario-routing.module';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValidatorPersonalizadoService } from './service/validator-personalizado.service';
+import { DirectivasPersonalizadasDirective } from "../formulario/directivas/directivas-personalizadas.directive";
 
 
 
 
 @NgModule({
   declarations: [
-    FormularioComponent
+    FormularioComponent,
+    DirectivasPersonalizadasDirective
   ],
   imports: [
    
     CommonModule,
     FormularioRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
     
   ], 

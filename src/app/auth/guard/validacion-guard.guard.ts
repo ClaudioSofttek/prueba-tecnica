@@ -13,38 +13,38 @@ import { Usuario, Address } from '../interface/Usuario.interface';
 
 export class ValidacionGuardGuard implements CanLoad, CanActivate {
 
-  constructor( private authServiceService: AuthServiceService,
-               private router: Router ) {}
+  constructor(private authServiceService: AuthServiceService,
+    private router: Router) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-      return this.authServiceService.verificaAutenticacion()
+    return this.authServiceService.verificaAutenticacion()
       .pipe(
-        tap( estaAutenticado => {
-          if( !estaAutenticado ) {
+        tap(estaAutenticado => {
+          if (!estaAutenticado) {
             this.router.navigate(['./auth/login']);
           }
         })
       )
-  
+
   }
 
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | boolean {
 
-      
 
-      return this.authServiceService.verificaAutenticacion()
+
+    return this.authServiceService.verificaAutenticacion()
       .pipe(
-        tap( estaAutenticado => {
-          if( !estaAutenticado ) {
+        tap(estaAutenticado => {
+          if (!estaAutenticado) {
             this.router.navigate(['./auth/login']);
           }
         })
       );
-       
+
   }
 }

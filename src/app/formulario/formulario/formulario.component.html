@@ -1,38 +1,46 @@
-<div>
-  <form novalidate [formGroup]="formulario" (ngSubmit)="mostrar()" autocomplete="off" >
-    <div class="flex-container">
+<div class="flex-container-col">
+  <form novalidate [formGroup]="formulario" (ngSubmit)="mostrar()" autocomplete="off">
+    <div class="div-personal">
 
 
-      <div><label>Email</label>
-        <input type="text" id="email" formControlName="email">
-        <div class="alert aler.danger mt-2"
-          [hidden]="formulario.get('email')?.valid || formulario.get('email')?.pristine ">
+      <div class="div-personal">
+        <label>Email :</label>
+        <input type="text" id="email" formControlName="email" style="margin-left: 30px;">
+        <div [hidden]="formulario.get('email')?.valid || formulario.get('email')?.pristine ">
           Ingresa un correo valido
-
         </div>
       </div>
-      <div><label>Password</label>
-        <input type="password" id="password" formControlName="password">
-        <div class="alert aler-danger mt-2"
-          [hidden]="formulario.get('password')?.valid || formulario.get('password')?.pristine ">el password es
+
+      <div class="div-personal">
+        <label>Password :</label>
+        <input type="password" id="password" formControlName="password" >
+        <div [hidden]="formulario.get('password')?.valid || formulario.get('password')?.pristine ">el password es
           obligatorio
         </div>
-        <label>nombre</label>
-        <input type="nombre" id="nombre" formControlName="nombre">
-        <div class="alert aler-danger mt-2"
-          [hidden]="formulario.get('nombre')?.valid || formulario.get('nombre')?.pristine ">el valor debe estar entre
+      </div>
+      <div class="div-personal">
+        <label>Nombre :</label>
+        <input type="nombre" id="nombre" formControlName="nombre" style="margin-left: 8px;">
+        <div [hidden]="formulario.get('nombre')?.valid || formulario.get('nombre')?.pristine ">el valor debe estar entre
           8 y 12 caracteres
         </div>
       </div>
 
-      <div><button class="btn btn-primary" [disabled]="formulario.invalid" type="submit">Guardar</button></div>
+      <div class="div-personal"><button class="btn btn-primary" [disabled]="formulario.invalid" type="submit">Guardar</button></div>
 
     </div>
 
 
   </form>
-
+<br>
+<br>
+<br>
 
   <h3>aqui {{formulario.value | json}}</h3>
+<br>
+<br>
 
+<div class="div-personal" >
+  <label> Prueba de directiva de bloqueo de numeros</label>
+  <input type="text"  style="margin-left: 20px;"  appDirectivasPersonalizadas ></div>
 </div>
